@@ -245,16 +245,17 @@ def prepare_environments(args) -> bool:
                 f"Invalid value for argument '--sync-repo', acceptable value are 'skip' and 'only'")
             exit(1)
 
+    if not skip_sync_repo:
+        download_repositories()
+
     preset_json = None
     if args.preset is not None:
         # Remove and copy preset folder
         origin_preset_folder = os.path.abspath(os.path.join(script_path, dir_repos, fooocus_name, 'presets'))
         preset_folder = os.path.abspath(os.path.join(script_path, 'presets'))
-        if not args.skip_pip:
-            # Not remove preset folder when cog predict
-            if os.path.exists(preset_folder):
-                shutil.rmtree(preset_folder)
-            shutil.copytree(origin_preset_folder, preset_folder)
+        if os.path.exists(preset_folder):
+            shutil.rmtree(preset_folder)
+        shutil.copytree(origin_preset_folder, preset_folder)
 
         preset_config = os.path.join(preset_folder, f"{args.preset}.json")
         if os.path.exists(preset_config) and os.path.isfile(preset_config):
@@ -279,9 +280,6 @@ def prepare_environments(args) -> bool:
 
     if args.disable_private_log:
         worker.save_log = False
-
-    if not skip_sync_repo:
-        download_repositories()
 
     if args.base_url is None or len(args.base_url.strip()) == 0:
         host = args.host
