@@ -250,8 +250,10 @@ def prepare_environments(args) -> bool:
         # Remove and copy preset folder
         origin_preset_folder = os.path.abspath(os.path.join(script_path, dir_repos, fooocus_name, 'presets'))
         preset_folder = os.path.abspath(os.path.join(script_path, 'presets'))
-        if os.path.exists(preset_folder):
-            shutil.rmtree(preset_folder)
+        if not args.skip_pip:
+            # Not remove preset folder when cog predict
+            if os.path.exists(preset_folder):
+                shutil.rmtree(preset_folder)
         shutil.copytree(origin_preset_folder, preset_folder)
 
         preset_config = os.path.join(preset_folder, f"{args.preset}.json")
