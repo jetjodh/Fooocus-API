@@ -8,13 +8,20 @@ from fooocusapi.task_queue import TaskType
 inpaint_model_version = 'v1'
 
 
-defualt_styles = ['Fooocus V2', 'Fooocus Enhance', 'Fooocus Sharp']
-default_base_model_name = 'sd_xl_base_1.0_0.9vae.safetensors'
-default_refiner_model_name = 'sd_xl_refiner_1.0_0.9vae.safetensors'
+defualt_styles = [
+    "Fooocus V2",
+    "Fooocus Masterpiece",
+    "SAI Anime",
+    "SAI Digital Art",
+    "SAI Enhance",
+    "SAI Fantasy Art"
+]
+default_base_model_name = 'bluePencilXL_v050.safetensors'
+default_refiner_model_name = 'DreamShaper_8_pruned.safetensors'
 default_lora = 'sd_xl_offset_example-lora_1.0.safetensors'
 default_lora_weight = 0.5
 default_cfg_scale = 7.0
-default_prompt_negative = ''
+default_prompt_negative = '(embedding:unaestheticXLv31:0.8), low quality, watermark'
 
 
 aspect_ratios = [
