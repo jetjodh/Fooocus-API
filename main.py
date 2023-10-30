@@ -254,7 +254,7 @@ def prepare_environments(args) -> bool:
             # Not remove preset folder when cog predict
             if os.path.exists(preset_folder):
                 shutil.rmtree(preset_folder)
-        shutil.copytree(origin_preset_folder, preset_folder)
+            shutil.copytree(origin_preset_folder, preset_folder)
 
         preset_config = os.path.join(preset_folder, f"{args.preset}.json")
         if os.path.exists(preset_config) and os.path.isfile(preset_config):
