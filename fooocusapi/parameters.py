@@ -8,14 +8,18 @@ from fooocusapi.task_queue import TaskType
 default_inpaint_engine_version = 'v2.6'
 
 
-defualt_styles = ['Fooocus V2', 'Fooocus Enhance', 'Fooocus Sharp']
-default_base_model_name = 'juggernautXL_version6Rundiffusion.safetensors'
+defualt_styles = [
+        "Fooocus V2",
+        "Fooocus Photograph",
+        "Fooocus Negative"
+    ]
+default_base_model_name = 'realisticStockPhoto_v10.safetensors'
 default_refiner_model_name = 'None'
 default_refiner_switch = 0.5
-default_lora_name = 'sd_xl_offset_example-lora_1.0.safetensors'
-default_lora_weight = 0.1
-default_cfg_scale = 4.0
-default_prompt_negative = ''
+default_lora_name = 'SDXL_FILM_PHOTOGRAPHY_STYLE_BetaV0.4.safetensors'
+default_lora_weight = 0.25
+default_cfg_scale = 3.0
+default_prompt_negative = 'unrealistic, saturated, high contrast, big nose, painting, drawing, sketch, cartoon, anime, manga, render, CG, 3d, watermark, signature, label'
 default_aspect_ratio = '1152×896'
 default_sampler = 'dpmpp_2m_sde_gpu'
 default_scheduler = 'karras'
