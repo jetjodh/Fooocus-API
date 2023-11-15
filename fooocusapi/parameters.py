@@ -18,7 +18,7 @@ defualt_styles = [
 ]
 default_base_model_name = 'bluePencilXL_v050.safetensors'
 default_refiner_model_name = 'DreamShaper_8_pruned.safetensors'
-default_refiner_switch = 0.667
+default_refiner_switch = 0.66
 default_lora_name = 'sd_xl_offset_example-lora_1.0.safetensors'
 default_lora_weight = 0.5
 default_cfg_scale = 7.0
